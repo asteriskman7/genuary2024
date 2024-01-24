@@ -136,7 +136,10 @@
         }
 
         load() {
+        }
+        _load() {
           this.t = 0;
+          this.load();
         }
         unload() { }
         update() { }
@@ -273,6 +276,15 @@
           // Transform to the desired mean and standard deviation:
           return z * stdev + mean;
         }
+        //info on concept: https://iquilezles.org/articles/palettes/
+        //design palette: http://dev.thi.ng/gradients/
+        cosineGradient(P, t) {
+          const [A, B, C, D] = P;
+          const r = A[0] + B[0] * Math.cos(Math.PI * 2 * (C[0] * t + D[0]));
+          const g = A[1] + B[1] * Math.cos(Math.PI * 2 * (C[1] * t + D[1]));
+          const b = A[2] + B[2] * Math.cos(Math.PI * 2 * (C[2] * t + D[2]));
+          return {r: r * 255, g: g * 255, b: b * 255};
+        }
       }
     </script>
 
@@ -367,7 +379,7 @@
           }
 
           this.currentSketch = this.sketches[n];
-          this.currentSketch.load();
+          this.currentSketch._load();
           const oldSelected = document.getElementsByClassName('promptDaySelected');
           if (oldSelected.length > 0) {
             oldSelected.item(0).classList.remove('promptDaySelected');
@@ -478,6 +490,7 @@
               setInterval(() => app.tick(), 33);
             }
           }
+
           document.body.appendChild(e);
         }
       }

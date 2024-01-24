@@ -3,6 +3,14 @@
 window.sketchClass = class extends Sketch {
   desc = "-"; // jshint ignore:line
 
+  //runs once every time the sketch starts
+  load() {
+  }
+
+  //runs once per frame. Time is this.t
+  update() {
+  }
+
   draw(ctx, width, height, t) {
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, width, height);
