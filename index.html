@@ -285,6 +285,10 @@
           const b = A[2] + B[2] * Math.cos(Math.PI * 2 * (C[2] * t + D[2]));
           return {r: r * 255, g: g * 255, b: b * 255};
         }
+        cosineGradientC(P, t) {
+          const rgb = this.cosineGradient(P, t);
+          return `rgb(${rgb.r},${rgb.g},${rgb.b})`;
+        }
       }
     </script>
 
