@@ -1,7 +1,7 @@
 'use strict';
 
 window.sketchClass = class extends Sketch {
-  desc = "-"; // jshint ignore:line
+  desc = "Celebrate!"; // jshint ignore:line
 
   load() {
     this.particles = [];
