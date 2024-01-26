@@ -289,6 +289,15 @@
           const rgb = this.cosineGradient(P, t);
           return `rgb(${rgb.r},${rgb.g},${rgb.b})`;
         }
+        rndPalette(seed) {
+          const pi = Math.PI;
+          return [
+            [this.lmap(this.rnd(seed + 0), 0, 1, -pi, pi), this.lmap(this.rnd(seed + 1), 0, 1, -pi, pi), this.lmap(this.rnd(seed + 2), 0, 1, -pi, pi)],
+            [this.lmap(this.rnd(seed + 3), 0, 1, -pi, pi), this.lmap(this.rnd(seed + 4), 0, 1, -pi, pi), this.lmap(this.rnd(seed + 5), 0, 1, -pi, pi)],
+            [this.lmap(this.rnd(seed + 6), 0, 1, -pi, pi), this.lmap(this.rnd(seed + 7), 0, 1, -pi, pi), this.lmap(this.rnd(seed + 8), 0, 1, -pi, pi)],
+            [this.lmap(this.rnd(seed + 9), 0, 1, -pi, pi), this.lmap(this.rnd(seed +10), 0, 1, -pi, pi), this.lmap(this.rnd(seed +11), 0, 1, -pi, pi)],
+          ];
+        }
         //s and l from 0 to 100
         rgbToHsl(r, g, b) {
           r /= 255; g /= 255; b /= 255;
