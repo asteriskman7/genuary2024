@@ -301,6 +301,13 @@
             [this.lmap(this.rnd(seed + 9), 0, 1, -pi, pi), this.lmap(this.rnd(seed +10), 0, 1, -pi, pi), this.lmap(this.rnd(seed +11), 0, 1, -pi, pi)]
           ];
         }
+        rndPalettePeriodic(seed) {
+          const p = this.rndPalette(seed);
+          p[2][0] = 1;
+          p[2][1] = 1;
+          p[2][2] = 1;
+          return p;
+        }
         //s and l from 0 to 100
         rgbToHsl(r, g, b) {
           r /= 255; g /= 255; b /= 255;
