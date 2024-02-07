@@ -65,7 +65,6 @@ window.sketchClass = class extends Sketch {
         const x = xi * s;
         const y = yi * s;
 
-        let dprod = 1;
         let d = Infinity;
         this.points.forEach( (p1, i) => {
           const dx1 = x - p1.x;
